@@ -11,7 +11,7 @@ body {
     font-size: 1cap;
     text-transform: uppercase;
     letter-spacing: 0px;
-    font-family: inter;
+    font-family:'Roboto', sans-serif;
     color: #000000;
     background-color: #ffffff;
 
@@ -275,7 +275,13 @@ footer {
 html {
     scroll-behavior: smooth;
 }
-
+@font-face {
+    font-family: 'Roboto';
+    src: url('Posterweb/RobotoFlex-Regular.woff2') format('.woff2');
+         
+    font-weight: normal;
+    font-style: normal;
+}
 /* Responsive Styles */
 @media (max-width: 768px) {
     .hero h1 {
@@ -322,7 +328,7 @@ html {
         justify-content: center;
         align-items: center;
         overflow: hidden;
-        background-color: #222; /* Add a background color to fill space */
+        background-color: #ffffff; /* Add a background color to fill space */
     }
     
     .portfolio-item img {
