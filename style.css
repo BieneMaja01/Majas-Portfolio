@@ -276,9 +276,8 @@ html {
     scroll-behavior: smooth;
 }
 @font-face {
-    font-family: 'Roboto';
-    src: url('Posterweb/RobotoFlex-Regular.woff2') format('.woff2');
-         
+    font-family:'Roboto';
+    src: url('Posterweb/RobotoFlex-Regular\ .woff2') format('woff2');
     font-weight: normal;
     font-style: normal;
 }
