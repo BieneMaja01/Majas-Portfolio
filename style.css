@@ -208,6 +208,39 @@ header nav ul li a {
     text-align: center;
 }
 
+.video-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.video-card {
+  width: 300px;
+  text-align: center;
+  text-decoration: none;
+  color: inherit;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.video-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.video-card img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  
+}
+
+.video-card p {
+  margin: 0.5em 0 1em;
+  font-size: 1em;
+}
 
 #about {
     padding: 60px 20px;
