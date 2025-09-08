@@ -4,6 +4,65 @@
     padding: 0;
     box-sizing: border-box;
 }
+.portfolio-item, .portfolio-item2, .portfolio-item3 {
+    position: relative;
+    overflow: hidden;
+    box-shadow: none;
+}
+
+.portfolio-item img, 
+.portfolio-item2 img, 
+.portfolio-item3 img {
+    width: 100%;
+    display: block;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+/* Gelbes Overlay */
+.portfolio-item::after,
+.portfolio-item2::after,
+.portfolio-item3::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 0, 0); /* unsichtbar am Anfang */
+    transition: background-color 0.3s ease;
+    pointer-events: none;
+    box-shadow: none; /* Schatten entfernen beim Hover */
+}
+
+.portfolio-item:hover::after,
+.portfolio-item2:hover::after,
+.portfolio-item3:hover::after {
+    background-color:rgb(255, 255, 255);; /* Gelb über Bild beim Hover */
+    box-shadow: none; /* Schatten entfernen beim Hover */
+}
+
+.d {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) translateY(20px);
+    color: #000000;                  /* schwarze Schrift */
+    font-size: 3.5em;
+    text-align: center;
+    opacity: 0;                   /* unsichtbar am Anfang */
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    pointer-events: none;
+    z-index: 9999;
+}
+
+.portfolio-item:hover .d,
+.portfolio-item2:hover .d,
+.portfolio-item3:hover .d {
+    opacity: 1;
+    transform: translate(-50%, -50%) translateY(0);
+}
+
 
 /* Body Styling */
 body {
@@ -127,13 +186,11 @@ header {
     background-color: rgba(255, 255, 255, 0.7);
     z-index: 5;
     padding: 20px;
-    list-style: none;
     display: flex;
     justify-content: flex-start;
 }
 
 header nav ul {
-    list-style: georgian;
     display: flex;
     justify-content: center;
 }
@@ -246,8 +303,35 @@ header nav ul li a {
     padding: 60px 20px;
     text-align: left;
 }
-#about h1 { letter-spacing: 0px;
-    font-size: 3em;}
+
+    
+    section#about .about-text {
+    font-family: 'Roboto', sans-serif;
+    font-size: 3.5em;
+    line-height: 1.0;
+    color: #000000;
+    letter-spacing: 0.5px;
+    margin: 20px 0;
+    text-align: left;
+    max-width: 100%;
+}
+
+section#about .about-text a {
+    color: #ffb700;
+    text-decoration: underline;
+}
+
+section#about .about-text a:hover {
+    color: #000;
+}
+
+@media (max-width: 768px) {
+    section#about .about-text {
+        font-size: 1em;
+        max-width: 100%;
+    }
+}
+
 
 #contact {
     padding: 120px 20px;
@@ -414,5 +498,6 @@ html {
     object-fit: cover;
     display: block;
   }
+  
 
 }
