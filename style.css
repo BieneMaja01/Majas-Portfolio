@@ -47,10 +47,13 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%) translateY(20px);
-    color: #000000;                  /* schwarze Schrift */
-    font-size: 3.5em;
+    color: #000;
+    font-size: clamp(16px, 5vw, 40px); /* min 16px, max 40px */
+    max-width: 90%;                    /* bleibt innerhalb des Posters */
     text-align: center;
-    opacity: 0;                   /* unsichtbar am Anfang */
+    line-height: 1.2;                  /* schöner Zeilenabstand */
+    word-wrap: break-word;              /* Zeilenumbruch bei langen Wörtern */
+    opacity: 0;
     transition: opacity 0.3s ease, transform 0.3s ease;
     pointer-events: none;
     z-index: 9999;
@@ -63,6 +66,11 @@
     transform: translate(-50%, -50%) translateY(0);
 }
 
+@media (max-width: 768px) {
+    .d {
+        font-size: clamp(14px, 6vw, 28px);
+    }
+}
 
 /* Body Styling */
 body {
