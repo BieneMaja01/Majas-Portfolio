@@ -1,511 +1,146 @@
-/* Basic reset */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-.portfolio-item, .portfolio-item2, .portfolio-item3 {
-    position: relative;
-    overflow: hidden;
-    box-shadow: none;
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
-.portfolio-item img, 
-.portfolio-item2 img, 
-.portfolio-item3 img {
-    width: 100%;
-    display: block;
-    transition: transform 0.3s ease, filter 0.3s ease;
+body{
+
+    background:white;
+    color:black;
+
+    font-family:
+    "Maname Regular";
+    font-feat;
+
+
+    overflow:hidden;
 }
 
-/* Gelbes Overlay */
-.portfolio-item::after,
-.portfolio-item2::after,
-.portfolio-item3::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 1;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(255, 255, 0, 0); /* unsichtbar am Anfang */
-    transition: background-color 0.3s ease;
-    pointer-events: none;
-    box-shadow: none; /* Schatten entfernen beim Hover */
+.content{
+
+    padding:60px;
+
 }
 
-.portfolio-item:hover::after,
-.portfolio-item2:hover::after,
-.portfolio-item3:hover::after {
-    background-color:rgb(255, 255, 255);; /* Gelb über Bild beim Hover */
-    box-shadow: none; /* Schatten entfernen beim Hover */
+h1{
+
+    font-size:56px;
+    font-weight:500;
+    margin-bottom:40px;
+
 }
 
-.d {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) translateY(20px);
-    color: #000;
-    font-size: clamp(16px, 5vw, 40px); /* min 16px, max 40px */
-    max-width: 90%;                    /* bleibt innerhalb des Posters */
-    text-align: center;
-    line-height: 1.2;                  /* schöner Zeilenabstand */
-    word-wrap: break-word;              /* Zeilenumbruch bei langen Wörtern */
-    opacity: 0;
-    transition: opacity 0.3s ease, transform 0.3s ease;
-    pointer-events: none;
-    z-index: 9999;
+.headline{
+
+    font-size:36px;
+    line-height:1.2;
+    margin-bottom:80px;
+
 }
 
-.portfolio-item:hover .d,
-.portfolio-item2:hover .d,
-.portfolio-item3:hover .d {
-    opacity: 1;
-    transform: translate(-50%, -50%) translateY(0);
+.contact{
+
+    font-size:20px;
+    line-height:1.8;
+
 }
 
-@media (max-width: 768px) {
-    .d {
-        font-size: clamp(14px, 6vw, 28px);
-    }
-}
+a{
 
-/* Body Styling */
-body {
-    text-decoration: none;
-    font-size: 1cap;
-    
-    letter-spacing: 0px;
-    font-family:'Roboto', sans-serif;
-    color: #000000;
-    background-color: #ffffff;
-
-    line-height: 1;
-    
-}
-h2 { letter-spacing: 0px;
-  letter-spacing: 0.05em;
- 
-    font-size: 1.5em;
-    line-height: 1.2em;
-    z-index: 9999;
-    position:relativ;}
-h1 { letter-spacing: 0px;
-  text-transform: uppercase;
-    font-size: 3em;
-    z-index: 9999;
-    position:relativ;
-}
-p { letter-spacing: 0px;
-  text-transform: uppercase;
-        font-size: 2em;
-      z-index: 9999;} 
-a {color: inherit; 
-    text-decoration: underline;
-          }
-
-.portfolio-grid {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    align-items: stretch;
-    gap: 1rem;
-    width: 100%;
-}
-.portfolio-item {
-    
-    height: 500px; /* Hier setzt du die gewünschte Höhe */
-    box-sizing: border-box;
-    display: flex;
-    justify-content: center; /* Zentriert das Bild */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Leichter Schatten */
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  margin-left: 0px;
-  }
-
-  .portfolio-item2 {
-    
-    height: 460px; /* Hier setzt du die gewünschte Höhe */
-    box-sizing: border-box;
-    display: flex;
-    justify-content: center; /* Zentriert das Bild */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Leichter Schatten */
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  margin-left: 0px;
-  }
-  .portfolio-item-img {
-    width: 100%;  /* Bild passt sich der Breite an */
-    height: 100%; /* Bild wird auf die Höhe der Kachel gezogen */
-    object-fit: cover; 
-    
-  }
-  .portfolio-item3 {
-    
-    height: 460px; /* Hier setzt du die gewünschte Höhe */
-    box-sizing: border-box;
-    display: flex;
-    justify-content: center; /* Zentriert das Bild */
-    
-  transition: transform 0.3s ease;
-  margin-left: 0px;
-  }
-  
-
-  .portfolio-item-video {
-    width: 100%;  /* Bild passt sich der Breite an */
-    height: 100%; /* Bild wird auf die Höhe der Kachel gezogen */
-    object-fit: cover; 
-  }
-
-
-.portfolio-item:hover {
-    transform: scale(1.01); /* Vergrößert die Kachel */
-    z-index: 2; /* Hebt die Kachel nach vorne */
-}
-.video {
-    
-    width: 100vw; 
-    position: center;
-    top: 0;
-    left: 0;
-    right: 0; 
-    height: 100vh;
-    z-index: 1;
-    grid-column: span 2;
-    background-color: rgba(255, 255, 255, 0.9);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease, z-index 0.3s ease;
-}
-
-.portfolio-item:hover video {
-    transform: scale(1.01);}
-
-
-/* Header (Sticky Navigation) */
-header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background-color: rgba(255, 255, 255, 0.7);
-    z-index: 5;
-    padding: 20px;
-    display: flex;
-    justify-content: flex-start;
-}
-
-header nav ul {
-    display: flex;
-    justify-content: center;
-}
-
-header nav ul li {
-    margin: 0 15px;
-}
-
-header nav ul li a { 
-    color: rgb(0, 0, 0);
-    ;
+    color:black;
     text-decoration:none;
-    font-size: 2.2em;
-    text-transform: uppercase;
-    letter-spacing: 0px;
+
 }
 
-/* Container für das Video */
-.video-background {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    z-index: -1; /* Damit das Video hinter dem Inhalt bleibt */
+a:hover{
+
+    text-decoration:underline;
+
 }
 
-.video-background video {
-    object-fit: cover; /* Bildfüllung - sorgt dafür, dass das Video den gesamten Bereich ausfüllt */
-    width: 100%;
-    height: 100%;
-    position:relative;dieses Semester/Story Mensa_1.mp4 dieses Semester/Fertig.mp4 dieses Semester/Komp 1.mp4 dieses Semester/Layout Wiesel und Igel.jpg dieses Semester/Perspektive 1.png dieses Semester/Perspektive 2.png
-    top: 0;
-    left: 0;
+#face{
+
+    position:fixed;
+    pointer-events:none;
+
 }
 
+/* =========================
+   HANDY VERSION
+   ========================= */
 
-.hero {
-    position: relative;
-    padding: 100px 20px;
-    text-align: center;
-    color: rgb(255, 183, 0);
-    z-index: 1; /* Der Text wird über dem Video angezeigt */
-    
-}
+@media (max-width: 600px) {
 
-.hero-content h1 {
-    font-size: 2.2em;
-    margin: 0;
-}
+    body {
+        overflow: hidden;
+    }
 
-.vorne p {
+    .content {
+        padding: 25px 20px;
+        width: auto;
+    }
 
-    font-size: 30em;
-    position: fixed;
-    z-index: 99999;
-}
-.hero p {     
-    font-size: 2.2em;
-    z-index: 9999;
-}
-.hero {
-  
-    transition: background-color 0.3s ease, filter 0.3s ease;
-    background-size: cover;
-    background-position: left;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-}
+    h1 {
+        font-size: 32px;
+        line-height: 1.1;
+        margin-bottom: 20px;
+    }
 
-.video-gallery {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1rem;
-  margin-top: 2rem;
-}
+    .headline {
+        font-size: 20px;
+        line-height: 1.25;
+    }
 
-.video-card {
-  width: 300px;
-  text-align: center;
-  text-decoration: none;
-  color: inherit;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
+    .contact {
+        margin-top: 35px;
+        font-size: 15px;
+        line-height: 1.4;
+    }
 
-.video-card:hover {
-  transform: scale(1.03);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-}
+    .contact p {
+        margin-bottom: 8px;
+    }
 
-.video-card img {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-  
-}
+    #face {
+        width: 90px;
+        height: 90px;
+    }
 
-.video-card p {
-  margin: 0.5em 0 1em;
-  font-size: 1em;
-}
-
-#about {
-    padding: 60px 20px;
-    text-align: left;
-}
-
-    
-    section#about .about-text {
-    font-family: 'Roboto', sans-serif;
-    font-size: 3.5em;
-    line-height: 1.0;
-    color: #000000;
-    letter-spacing: 0.5px;
-    margin: 20px 0;
-    text-align: left;
-    max-width: 100%;
-}
-
-section#about .about-text a {
-    color: #ffb700;
-    text-decoration: underline;
-}
-
-section#about .about-text a:hover {
-    color: #000;
-}
-
-@media (max-width: 768px) {
-    section#about .about-text {
-        font-size: 1em;
-        max-width: 100%;
+    #face svg {
+        width: 90px;
+        height: 90px;
     }
 }
 
 
-#contact {
-    padding: 120px 20px;
-     background-color: #ffffff;
-     overflow: hidden;
-   
-     
-}
+/* Noch kleinere Handys */
+@media (max-width: 380px) {
 
-footer {
-    background-color:rgb(255, 183, 0);
-   
-    text-align: left;
-    padding: 50px;
-    
-}
+    .content {
+        padding: 20px 16px;
+    }
 
+    h1 {
+        font-size: 28px;
+    }
 
-.social-media {
-    margin-top: 0px;
-}
+    .headline {
+        font-size: 18px;
+    }
 
-.social-media a {
-    color: rgb(0, 0, 0);
-    margin: 0 0px;
-    text-decoration: none;
-    font-size: 0.5em;
-}
+    .contact {
+        font-size: 14px;
+        margin-top: 28px;
+    }
 
-.link-dropdown {
-    width: fit-content;
-    font-family: sans-serif;
-    position: center;
-    ;
-  }
-  
-  .dropdown-toggle {
-    background: none;
-    border: none;
-    font-size: 1.1rem;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-  }
-  
-  .arrow {
-    display: inline-block;
-    transition: transform 0.3s ease;
-  }
-  
-  .dropdown-content {
-    display: none;
-    margin-top: 0.5rem;
-    flex-direction: column;
-  }
-  
-  .dropdown-content a {
-    text-decoration: none;
-    color: black;
-    margin: 0.25rem 0;
-    display: block;
-  }
-  
-  .dropdown-content a:hover {
-    text-decoration: underline;
-  }
-  
+    #face {
+        width: 75px;
+        height: 75px;
+    }
 
-/* Smooth Scroll */
-html {
-    scroll-behavior: smooth;
-}
-@font-face {
-    font-family:'Roboto';
-    src: url('Posterweb/RobotoFlex-Regular\ .woff2') format('woff2');
-    font-weight: normal;
-    font-style: normal;
-}
-/* Responsive Styles */
-
-@media (max-width: 768px) {
-  /* Navigation */
-  nav {
-    width: 100%;
-  }
-  header nav ul {
-    align-items: center;
-    padding: 0;
-    justify-content: space-between;
-  }
-
-  header nav ul li {
-    margin: 8px 0;
-    font-size: 0.8em;
-  }
-
-  /* Hero-Text */
-  .hero h1 {
-    font-size: 4.5em;
-  }
-
-  .hero p {
-    font-size: 1em;
-    text-align: center;
-    padding: 0 10px;
-  }
-
-  /* Video-Container: passt Video der Bildschirmbreite an */
-  .video{
-    height:unset;
-  }
-  .video video,
-  .portfolio-item video,
-  .portfolio-item3 video {
-    width: 100%;
-    height: auto;
-    max-width: 100vw;
-  }
-
-  /* Portfolio Grid */
-  .portfolio-grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: start;
-    gap: 5px;
-    padding: 0 5px;
-  }
-  .portfolio-grid h1{
-    width:100%;
-  }
-
-  /* Alle Items auf 3 Spalten skalieren */
-  .portfolio-item,
-  .portfolio-item2{
-    flex: 0 0 32%;
-    max-width: 32%;
-    box-sizing: border-box;
-    height: auto;
-  }
-  .portfolio-item3 {
-    width: 49%;
-    height: unset;
-
-  }
-  .portfolio-book-break{
-    display: none;
-  }
-
-  /* Bilder anpassen */
-  .portfolio-item img,
-  .portfolio-item2 img,
-  .portfolio-item3 img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-    display: block;
-  }
-
-  /* Video in Item */
-  .portfolio-item-video {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-    display: block;
-  }
-  
-
+    #face svg {
+        width: 75px;
+        height: 75px;
+    }
 }
