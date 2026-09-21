@@ -1,69 +1,56 @@
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+@font-face {
+    font-family: "Maname";
+    src: url("Maname-Regular.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
 }
 
-body{
-
-    background:white;
-    color:black;
-
-    font-family:
-    "Maname-Regular.ttf";
-    font-feat;
-
-
-    overflow:hidden;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.content{
-
-    padding:60px;
-
+body {
+    background: white;
+    color: black;
+    font-family: "Maname", sans-serif;
+    overflow: hidden;
 }
 
-h1{
-
-    font-size:56px;
-    font-weight:500;
-    margin-bottom:40px;
-
+.content {
+    padding: 60px;
 }
 
-.headline{
-
-    font-size:36px;
-    line-height:1.2;
-    margin-bottom:80px;
-
+h1 {
+    font-size: 56px;
+    font-weight: 500;
+    margin-bottom: 40px;
 }
 
-.contact{
-
-    font-size:20px;
-    line-height:1.8;
-
+.headline {
+    font-size: 36px;
+    line-height: 1.2;
+    margin-bottom: 80px;
 }
 
-a{
-
-    color:black;
-    text-decoration:none;
-
+.contact {
+    font-size: 20px;
+    line-height: 1.8;
 }
 
-a:hover{
-
-    text-decoration:underline;
-
+a {
+    color: black;
+    text-decoration: none;
 }
 
-#face{
+a:hover {
+    text-decoration: underline;
+}
 
-    position:fixed;
-    pointer-events:none;
-
+#face {
+    position: fixed;
+    pointer-events: none;
 }
 
 /* =========================
@@ -113,8 +100,8 @@ a:hover{
     }
 }
 
-
 /* Noch kleinere Handys */
+
 @media (max-width: 380px) {
 
     .content {
